@@ -6,7 +6,7 @@
 </script>
 
 {#if $expandable}
-  <span
+  <button
     class="container"
     on:click={(event) => {
       event.stopPropagation();
@@ -14,16 +14,19 @@
     }}
   >
     <span class="arrow" class:expanded={$expanded}>{'\u25B6'}</span>
-  </span>
+  </button>
 {/if}
 
 <style>
   .container {
-    display: inline-block;
+    display: flex;
     transform: translate(calc(0px - var(--li-identation)), -50%);
     position: absolute;
     top: 50%;
-    padding-right: 100%;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    border: 0;
   }
   .arrow {
     transform-origin: 25% 50%;
